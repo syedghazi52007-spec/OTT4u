@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free OTT Apps Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .card h2 {
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #22c55e;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #16a34a;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #020617;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>🎬 Free OTT Apps Hub</header>
+
+<div class="container" id="appContainer"></div>
+
+<footer>
+  ⚠️ This website provides links for educational purposes only.
+</footer>
+
+<script>
+const apps = [
+  {
+    name: "Movie Box",
+    logo: "movie box logo.png",
+    link: "https://www.moviebox4u.app/download-movie-box-app/"
+  },
+  {
+    name: "HD Garh TV",
+    logo: "hd garh-logo.png",
+    link: "https://download.hdghartv.com.pk/HDGharTV-New.apk"
+  },
+  {
+    name: "OnStream",
+    logo: "appicon-onstrem-150x150.png",
+    link: "https://onstreamapks.app/#download"
+  }
+];
+
+const container = document.getElementById("appContainer");
+
+apps.forEach(app => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <img src="${app.logo}" alt="${app.name}">
+    <h2>${app.name}</h2>
+    <a class="btn" href="${app.link}" target="_blank">Download</a>
+  `;
+
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
